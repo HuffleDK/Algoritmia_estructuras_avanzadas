@@ -7,7 +7,6 @@ from itertools import permutations
 def init_cd(n: int):
     return np.full(n, -1, dtype=int)
 
-print(init_cd(5))
 
 
 def union(rep_1: int, rep_2: int, p_cd: np.ndarray):
@@ -22,17 +21,13 @@ def union(rep_1: int, rep_2: int, p_cd: np.ndarray):
         p_cd[rep_1] -= 1
         return rep_2
 
-test = np.array = [-4, 0, 5, 1, 0, 4, -3, 6, 7]
-#print(union(0, 6, test))
 
 def find(ind: int, p_cd: np.ndarray):
     root = ind
 
-    print(p_cd)
     while p_cd[root] >= 0:
         root  = p_cd[root]
     
-    print(f"la raíz de {ind}: {root}")
 
     while p_cd[ind] >= 0:
         a = p_cd[ind]
@@ -41,9 +36,6 @@ def find(ind: int, p_cd: np.ndarray):
     return root
     
 
-	
-print(test)
-print(find(2, test))
 
 from queue import PriorityQueue
 
@@ -64,15 +56,11 @@ def kruskal(n: int, l_g: list):
     while not pq.empty():
         _, (u, v) = pq.get()
 
-        print(f"Examining edge {u}, {v}")
-
         x = find(u, ds)
         y = find(v, ds)
 
-        print(f"Got roots {x}, {y}")  
         
         if x != y:
-            print("Doing the union")
             l_t.append((u,v))
             union(x, y, ds)
     
@@ -119,8 +107,6 @@ def time_kruskal(n_graphs: int, n_nodes_ini: int, n_nodes_fin: int, step: int)->
         times.append((n, media))
     
     return times
-
-print(time_kruskal(3, 50, 100, 10))
 
 
 def kruskal_2(n: int, l_g: list):
