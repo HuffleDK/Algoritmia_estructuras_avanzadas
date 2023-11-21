@@ -3,13 +3,32 @@ import random
 from typing import List
 from time import time
 from itertools import permutations
+from queue import PriorityQueue
 
-def init_cd(n: int):
+
+def init_cd(n: int) -> np.ndarray:
+    """Inicializa un conjunto disjunto en forma de array de numpy inicializado a -1
+
+    Args:
+        n (int): tamaño del conjunto disjunto
+
+    Returns:
+        np.ndarray: Conjunto Disjunto
+    """
     return np.full(n, -1, dtype=int)
 
 
+def union(rep_1: int, rep_2: int, p_cd: np.ndarray) -> int:
+    """En el conjunto disjunto p_cd, une los nodos rep_1 y rep_2, creando el arbol con menor altura posible
 
-def union(rep_1: int, rep_2: int, p_cd: np.ndarray):
+    Args:
+        rep_1 (int): raiz del primer arbol
+        rep_2 (int): raiz del segundo arbol
+        p_cd (np.ndarray): Conjunto disjunto
+    
+    Returns:
+        int: raiz del arbol union resultado
+    """
     if p_cd[rep_1] < p_cd[rep_2]:
         p_cd[rep_2] = rep_1
         return rep_1
@@ -22,33 +41,52 @@ def union(rep_1: int, rep_2: int, p_cd: np.ndarray):
         return rep_2
 
 
-def find(ind: int, p_cd: np.ndarray):
+def find(ind: int, p_cd: np.ndarray) -> int:
+    """Encuentra la raiz del nodo ind en p_cd y aplica compresión de caminos
+
+    Args:
+        ind (int): indice que encontrar
+        p_cd (np.ndarray): Conjunto disjunto
+
+    Returns:
+        int: raiz del nodo ind
+    """
     root = ind
 
     while p_cd[root] >= 0:
-        root  = p_cd[root]
-    
+        root = p_cd[root]
 
     while p_cd[ind] >= 0:
         a = p_cd[ind]
         p_cd[ind] = root
         ind = a
     return root
-    
 
 
-from queue import PriorityQueue
+def create_pq(n: int, l_g: List) -> PriorityQueue:
+    """Crea una cola de prioridad dado una lista de aristas. 
+    Las aristas deben estar formateadas de forma (nodo1, nodo2, distancia entre ambos)
 
-def create_pq(n: int, l_g: list):
+    Args:
+        n (int): Numero de nodos en el grafo
+        l_g (List): Lista con aristas.
+    Returns:
+        PriorityQueue: Cola de prioridad
+    """
     pq = PriorityQueue()
 
     for u, v, w in l_g:
-        pq.put((w, (u,v)))
-    
+        pq.put((w, (u, v)))
+
     return pq
-    
+
 
 def kruskal(n: int, l_g: list):
+    """Dado un grafo en forma de lista de aristas, encuentra el arbol recubridor minimo
+
+    Args:
+        n (int): Numero de vertices en el grafo 
+    """
     pq = create_pq(n, l_g)
     ds = init_cd(n)
     l_t = []
@@ -59,44 +97,39 @@ def kruskal(n: int, l_g: list):
         x = find(u, ds)
         y = find(v, ds)
 
-        
         if x != y:
-            l_t.append((u,v))
+            l_t.append((u, v))
             union(x, y, ds)
-    
+
     # ctr = 0
     # for i in range(0, len(ds)-1):
     #     if ds[i] < 0:
     #         ctr +=1
     #     if ctr >=2:
     #         return None
-        
 
     return (n, l_t)
 
 
-def complete_graph(n_nodes: int, max_weight=50)-> tuple[int, list]:
+def complete_graph(n_nodes: int, max_weight=50) -> tuple[int, list]:
     n = n_nodes
     l_g = []
 
     while n_nodes >= 1:
-        for i in range(n_nodes-1):
-            l_g.append((i, n_nodes -1, random.randint(1, max_weight)))
+        for i in range(n_nodes - 1):
+            l_g.append((i, n_nodes - 1, random.randint(1, max_weight)))
 
         n_nodes -= 1
 
-    
     return (n, l_g)
 
 
-
-
-def time_kruskal(n_graphs: int, n_nodes_ini: int, n_nodes_fin: int, step: int)-> List:
+def time_kruskal(n_graphs: int, n_nodes_ini: int, n_nodes_fin: int, step: int) -> List:
     times = []
 
-    for n in range(n_nodes_ini, n_nodes_fin+1, step):
+    for n in range(n_nodes_ini, n_nodes_fin + 1, step):
         l_graphs = []
-        l_graphs = [complete_graph(n, 50) for i in range(0,n_graphs)]
+        l_graphs = [complete_graph(n, 50) for i in range(0, n_graphs)]
         media = 0
         for graph in l_graphs:
             time1 = time()
@@ -105,7 +138,7 @@ def time_kruskal(n_graphs: int, n_nodes_ini: int, n_nodes_fin: int, step: int)->
             media = media + time2 - time1
         media = media / n_graphs
         times.append((n, media))
-    
+
     return times
 
 
@@ -124,49 +157,52 @@ def kruskal_2(n: int, l_g: list):
         x = find(u, ds)
         y = find(v, ds)
         time2_fin = time()
-        
+
         time3, time3_fin = 0, 0
         if x != y:
-            l_t.append((u,v))
+            l_t.append((u, v))
             time3 = time()
             union(x, y, ds)
             time3_fin = time()
-        
-        time_k += time2_fin - time2 + time3_fin - time3 
+
+        time_k += time2_fin - time2 + time3_fin - time3
 
     return (n, l_t, time_k)
 
-def time_kruskal_2(n_graphs: int, n_nodes_ini: int, n_nodes_fin: int, step: int)-> List:
+
+def time_kruskal_2(
+    n_graphs: int, n_nodes_ini: int, n_nodes_fin: int, step: int
+) -> List:
     times = []
 
-    for n in range(n_nodes_ini, n_nodes_fin+1, step):
+    for n in range(n_nodes_ini, n_nodes_fin + 1, step):
         l_graphs = []
-        l_graphs = [complete_graph(n, 50) for i in range(0,n_graphs)]
+        l_graphs = [complete_graph(n, 50) for i in range(0, n_graphs)]
         media = 0
         for graph in l_graphs:
             _, _, k_time = kruskal_2(graph[0], graph[1])
             media = media + k_time
         media = media / n_graphs
         times.append((n, media))
-    
+
     return times
 
 
 def dist_matrix(n_nodes: int, w_max=10) -> np.ndarray:
-    """
-    """
-    m = np.random.randint(1, w_max+1, (n_nodes, n_nodes))
+    """ """
+    m = np.random.randint(1, w_max + 1, (n_nodes, n_nodes))
     m = (m + m.T) // 2
     np.fill_diagonal(m, 0)
     return m
 
-def greedy_tsp(dist_m: np.ndarray, node_ini=0)-> List:
+
+def greedy_tsp(dist_m: np.ndarray, node_ini=0) -> List:
     num_cities = dist_m.shape[0]
     circuit = [node_ini]
     while len(circuit) < num_cities:
         current_city = circuit[-1]
         # sort cities in ascending distance from current
-        options = np.argsort(dist_m[ current_city ])
+        options = np.argsort(dist_m[current_city])
         # add first city in sorted list not visited yet
         for city in options:
             if city not in circuit:
@@ -174,7 +210,8 @@ def greedy_tsp(dist_m: np.ndarray, node_ini=0)-> List:
                 break
     return np.array(circuit)
 
-def len_circuit(circuit: List, dist_m: np.ndarray)-> int:  
+
+def len_circuit(circuit: List, dist_m: np.ndarray) -> int:
     dist = 0
     city_before = circuit[0]
     for city in circuit:
@@ -182,19 +219,22 @@ def len_circuit(circuit: List, dist_m: np.ndarray)-> int:
         city_before = city
     return dist
 
-def repeated_greedy_tsp(dist_m: np.ndarray)-> List:
+
+def repeated_greedy_tsp(dist_m: np.ndarray) -> List:
     best_circuit = greedy_tsp(dist_m, 0)
 
-    for city in range(1, len(dist_m[0])-1):
+    for city in range(1, len(dist_m[0]) - 1):
         circuit = greedy_tsp(dist_m, city)
         if min(len_circuit(circuit), len_circuit(best_circuit)) == len_circuit(circuit):
             best_circuit = circuit
     return best_circuit
 
-def exhaustive_tsp(dist_m: np.ndarray)-> List:
 
+def exhaustive_tsp(dist_m: np.ndarray) -> List:
     best_circuit = [item for item in range(0, dist_m.shape[0])]
     for circuit in permutations(range(0, dist_m.shape[0])):
-        if min(len_circuit(circuit, dist_m),len_circuit(best_circuit, dist_m)) == len_circuit(circuit, dist_m):
+        if min(
+            len_circuit(circuit, dist_m), len_circuit(best_circuit, dist_m)
+        ) == len_circuit(circuit, dist_m):
             best_circuit = circuit
     return best_circuit
