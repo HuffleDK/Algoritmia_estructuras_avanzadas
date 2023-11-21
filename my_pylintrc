@@ -1,0 +1,58 @@
+[MESSAGES CONTROL]
+
+disable=all
+
+enable:missing-module-docstring,
+       empty-docstring,
+       inconsistent-return-statements,
+       unused-variable,
+       missing-function-docstring,
+       wrong-import-order,
+       unused-import,
+       line-too-long,
+       no-else-return,
+       inconsistent-return-statements,
+       trailing-whitespace,
+       blacklisted-name,
+       line-too-long,
+       bad-format-character,
+       bad-format-string-key,
+       bad-format-string,
+       duplicate-argument-name,
+       duplicate-key,
+       expression-not-assigned,
+       function-redefined,
+       invalid-length-returned,
+       invalid-sequence-index,
+       invalid-slice-index,
+       not-an-iterable,
+       not-callable,
+       repeated-keyword,
+       return-outside-function,
+       undefined-loop-variable,
+       undefined-variable,
+       unexpected-keyword-arg,
+       unpacking-non-sequence,
+       unreachable,
+       
+       unused-argument,
+       unused-import,
+       unused-variable,
+       
+       global-variable-not-assigned,
+       multiple-imports,
+       multiple-statements,
+       simplifiable-if-statement,
+       simplifiable-range,
+       
+       superfluous-parens,
+       unnecessary-pass,
+       unnecessary-semicolon,
+       unneeded-not,
+       useless-else-on-loop,
+       
+       bad-indentation,
+       duplicate-code,
+       no-else-return,
+	   
+score=yes
