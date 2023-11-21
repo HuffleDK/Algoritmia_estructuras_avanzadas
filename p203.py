@@ -1,8 +1,10 @@
-import numpy as np
 import random
 from typing import List
 from time import time
 from itertools import permutations
+from queue import PriorityQueue
+
+import numpy as np
 
 
 def init_cd(n: int):
@@ -13,13 +15,12 @@ def union(rep_1: int, rep_2: int, p_cd: np.ndarray):
     if p_cd[rep_1] < p_cd[rep_2]:
         p_cd[rep_2] = rep_1
         return rep_1
-    elif p_cd[rep_1] > p_cd[rep_2]:
+    if p_cd[rep_1] > p_cd[rep_2]:
         p_cd[rep_1] = rep_2
         return rep_2
-    else:
-        p_cd[rep_2] = rep_1
-        p_cd[rep_1] -= 1
-        return rep_2
+    p_cd[rep_2] = rep_1
+    p_cd[rep_1] -= 1
+    return rep_2
 
 
 def find(ind: int, p_cd: np.ndarray):
@@ -35,13 +36,10 @@ def find(ind: int, p_cd: np.ndarray):
     return root
 
 
-from queue import PriorityQueue
-
-
 def create_pq(n: int, l_g: list):
     pq = PriorityQueue()
 
-    for u, v, w in l_g:
+    for u, v, w in l_g:        
         pq.put((w, (u, v)))
 
     return pq
