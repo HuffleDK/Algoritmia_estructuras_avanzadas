@@ -44,15 +44,18 @@ def main():
     print(30 * "_" + "Checking CD")
 
     # ejemplo del problema 2.15; usar cualquier otro
-    p = np.array([-2, 0, 1, -2, 3, 4, -1, -2, 7, 8])
-    d = cd_2_dict(p)
+    p = np.array([-3, 0, 1, -3, 3, 4, -1, -3, 7, 8])
+    print("tabla cd antes\t", p)
+
+    d = cd_2_dict(p.copy())
     print("antes  \t", d)
 
     p2.union(p2.find(1, p), p2.find(5, p), p)
     p2.union(p2.find(2, p), p2.find(6, p), p)
     p2.union(p2.find(5, p), p2.find(9, p), p)
-    d = cd_2_dict(p)
     print("tabla cd después\t", p)
+
+    d = cd_2_dict(p)
     print(" dict cd después\t", d)
 
     _ = input("\npulsar Intro para continuar " + 20 * "." + "\n")
@@ -175,7 +178,7 @@ if __name__ == "__main__":
             if os.path.isfile(f_path):
                 str_comm = "cp " + f_path + " p2.py"
                 os.system(str_comm)
-                import p2
+                import p203
 
                 main()
 

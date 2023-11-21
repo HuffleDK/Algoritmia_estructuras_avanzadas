@@ -3,32 +3,13 @@ import random
 from typing import List
 from time import time
 from itertools import permutations
-from queue import PriorityQueue
 
 
-def init_cd(n: int) -> np.ndarray:
-    """Inicializa un conjunto disjunto en forma de array de numpy inicializado a -1
-
-    Args:
-        n (int): tamaño del conjunto disjunto
-
-    Returns:
-        np.ndarray: Conjunto Disjunto
-    """
+def init_cd(n: int):
     return np.full(n, -1, dtype=int)
 
 
-def union(rep_1: int, rep_2: int, p_cd: np.ndarray) -> int:
-    """En el conjunto disjunto p_cd, une los nodos rep_1 y rep_2, creando el arbol con menor altura posible
-
-    Args:
-        rep_1 (int): raiz del primer arbol
-        rep_2 (int): raiz del segundo arbol
-        p_cd (np.ndarray): Conjunto disjunto
-    
-    Returns:
-        int: raiz del arbol union resultado
-    """
+def union(rep_1: int, rep_2: int, p_cd: np.ndarray):
     if p_cd[rep_1] < p_cd[rep_2]:
         p_cd[rep_2] = rep_1
         return rep_1
@@ -41,16 +22,7 @@ def union(rep_1: int, rep_2: int, p_cd: np.ndarray) -> int:
         return rep_2
 
 
-def find(ind: int, p_cd: np.ndarray) -> int:
-    """Encuentra la raiz del nodo ind en p_cd y aplica compresión de caminos
-
-    Args:
-        ind (int): indice que encontrar
-        p_cd (np.ndarray): Conjunto disjunto
-
-    Returns:
-        int: raiz del nodo ind
-    """
+def find(ind: int, p_cd: np.ndarray):
     root = ind
 
     while p_cd[root] >= 0:
@@ -63,16 +35,10 @@ def find(ind: int, p_cd: np.ndarray) -> int:
     return root
 
 
-def create_pq(n: int, l_g: List) -> PriorityQueue:
-    """Crea una cola de prioridad dado una lista de aristas. 
-    Las aristas deben estar formateadas de forma (nodo1, nodo2, distancia entre ambos)
+from queue import PriorityQueue
 
-    Args:
-        n (int): Numero de nodos en el grafo
-        l_g (List): Lista con aristas.
-    Returns:
-        PriorityQueue: Cola de prioridad
-    """
+
+def create_pq(n: int, l_g: list):
     pq = PriorityQueue()
 
     for u, v, w in l_g:
@@ -82,11 +48,6 @@ def create_pq(n: int, l_g: List) -> PriorityQueue:
 
 
 def kruskal(n: int, l_g: list):
-    """Dado un grafo en forma de lista de aristas, encuentra el arbol recubridor minimo
-
-    Args:
-        n (int): Numero de vertices en el grafo 
-    """
     pq = create_pq(n, l_g)
     ds = init_cd(n)
     l_t = []
