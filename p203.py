@@ -1,5 +1,5 @@
 import random
-from typing import List
+from typing import List, Tuple
 from time import time
 from itertools import permutations
 from queue import PriorityQueue
@@ -7,11 +7,29 @@ from queue import PriorityQueue
 import numpy as np
 
 
-def init_cd(n: int):
+def init_cd(n: int) -> np.ndarray:
+    """Inicializa un conjunto disjunto en forma de array de numpy inicializado a -1
+
+    Args:
+        n (int): tamaño del conjunto disjunto
+
+    Returns:
+        np.ndarray: Conjunto Disjunto
+    """
     return np.full(n, -1, dtype=int)
 
 
-def union(rep_1: int, rep_2: int, p_cd: np.ndarray):
+def union(rep_1: int, rep_2: int, p_cd: np.ndarray) -> int:
+    """En el conjunto disjunto p_cd, une los nodos rep_1 y rep_2, creando el arbol con menor altura posible
+
+    Args:
+        rep_1 (int): raiz del primer arbol
+        rep_2 (int): raiz del segundo arbol
+        p_cd (np.ndarray): Conjunto disjunto
+    
+    Returns:
+        int: raiz del arbol union resultado
+    """
     if p_cd[rep_1] < p_cd[rep_2]:
         p_cd[rep_2] = rep_1
         return rep_1
@@ -23,7 +41,16 @@ def union(rep_1: int, rep_2: int, p_cd: np.ndarray):
     return rep_2
 
 
-def find(ind: int, p_cd: np.ndarray):
+def find(ind: int, p_cd: np.ndarray) -> int:
+    """Encuentra la raiz del nodo ind en p_cd y aplica compresión de caminos
+
+    Args:
+        ind (int): indice que encontrar
+        p_cd (np.ndarray): Conjunto disjunto
+
+    Returns:
+        int: raiz del nodo ind
+    """
     root = ind
 
     while p_cd[root] >= 0:
@@ -36,7 +63,16 @@ def find(ind: int, p_cd: np.ndarray):
     return root
 
 
-def create_pq(n: int, l_g: list):
+def create_pq(n: int, l_g: List) -> PriorityQueue:
+    """Crea una cola de prioridad dado una lista de aristas. 
+    Las aristas deben estar formateadas de forma (nodo1, nodo2, distancia entre ambos)
+
+    Args:
+        n (int): Numero de nodos en el grafo
+        l_g (List): Lista con aristas.
+    Returns:
+        PriorityQueue: Cola de prioridad
+    """
     pq = PriorityQueue()
 
     for u, v, w in l_g:        
@@ -45,7 +81,15 @@ def create_pq(n: int, l_g: list):
     return pq
 
 
-def kruskal(n: int, l_g: list):
+def kruskal(n: int, l_g: List) -> Tuple[int, List]:
+    """Dado un grafo en forma de lista de aristas, encuentra el arbol recubridor minimo
+
+    Args:
+        n (int): Numero de vertices en el grafo 
+        l_g (int): Lista de aristas que compone el grafo
+    Returns:
+        Tuple[int, List]: Numero de nodos del grafo, lista de aristas final.
+    """
     pq = create_pq(n, l_g)
     ds = init_cd(n)
     l_t = []
@@ -60,17 +104,18 @@ def kruskal(n: int, l_g: list):
             l_t.append((u, v))
             union(x, y, ds)
 
-    # ctr = 0
-    # for i in range(0, len(ds)-1):
-    #     if ds[i] < 0:
-    #         ctr +=1
-    #     if ctr >=2:
-    #         return None
-
     return (n, l_t)
 
 
-def complete_graph(n_nodes: int, max_weight=50) -> tuple[int, list]:
+def complete_graph(n_nodes: int, max_weight: int=50) -> Tuple[int, List]:
+    """Genera un grafo completo con n_nodes nodos.
+
+    Args:
+        n_nodes (int): Numero de nodos del grafo a generar.
+        max_weight (optional, int): Máximo peso de las aristas. Por defecto 50.
+    Returns:
+        (int, List): Numero de nodos del grafo, lista con las aristas. 
+    """
     n = n_nodes
     l_g = []
 
@@ -84,6 +129,16 @@ def complete_graph(n_nodes: int, max_weight=50) -> tuple[int, list]:
 
 
 def time_kruskal(n_graphs: int, n_nodes_ini: int, n_nodes_fin: int, step: int) -> List:
+    """Calcula el tiempo de ejecucción de la función kruskal. Genera varios grafos, aumentado el tamaño.
+
+    Args:
+        n_graphs (int): Numero de grafos generados en cada timing.
+        n_nodes_ini (int): Tamaño del grafo inicial.
+        n_nodes_fin (int): Máximo tamaño del grafo.
+        step (int): Cantidad de nodos a añadir con cada timing.
+    Returns:
+        List: Lista de tiempos de ejecución con el tamaño de cada grafo
+    """
     times = []
 
     for n in range(n_nodes_ini, n_nodes_fin + 1, step):
@@ -101,7 +156,16 @@ def time_kruskal(n_graphs: int, n_nodes_ini: int, n_nodes_fin: int, step: int) -
     return times
 
 
-def kruskal_2(n: int, l_g: list):
+def kruskal_2(n: int, l_g: list) -> Tuple[int, List, float]:
+    """Funcion auxiliar. Ademas de ejecutar kruskal, devuelve el tiempo de gestion del conjunto disjunto 
+
+    Args:
+        n (int): Numero de vertices en el grafo 
+        l_g (int): Lista de aristas que compone el grafo
+    Returns:
+        Tuple[int, List, float]: Numero de nodos del grafo, lista de aristas final.
+    """
+
     pq = create_pq(n, l_g)
     time1 = time()
     ds = init_cd(n)
@@ -132,6 +196,17 @@ def kruskal_2(n: int, l_g: list):
 def time_kruskal_2(
     n_graphs: int, n_nodes_ini: int, n_nodes_fin: int, step: int
 ) -> List:
+    """Calcula el tiempo de ejecucción de la función kruskal pero solo los tiempos de gestion de conjunto disjunto. 
+    Genera varios grafos, aumentado el tamaño.
+
+    Args:
+        n_graphs (int): Numero de grafos generados en cada timing.
+        n_nodes_ini (int): Tamaño del grafo inicial.
+        n_nodes_fin (int): Máximo tamaño del grafo.
+        step (int): Cantidad de nodos a añadir con cada timing.
+    Returns:
+        List: Lista de tiempos de ejecución con el tamaño de cada grafo
+    """
     times = []
 
     for n in range(n_nodes_ini, n_nodes_fin + 1, step):
@@ -148,7 +223,7 @@ def time_kruskal_2(
 
 
 def dist_matrix(n_nodes: int, w_max=10) -> np.ndarray:
-    """ """
+    """Placeholder for disvmatrix"""
     m = np.random.randint(1, w_max + 1, (n_nodes, n_nodes))
     m = (m + m.T) // 2
     np.fill_diagonal(m, 0)
@@ -156,6 +231,7 @@ def dist_matrix(n_nodes: int, w_max=10) -> np.ndarray:
 
 
 def greedy_tsp(dist_m: np.ndarray, node_ini=0) -> List:
+    """Placeholder for gtsp"""
     num_cities = dist_m.shape[0]
     circuit = [node_ini]
     while len(circuit) < num_cities:
@@ -171,6 +247,8 @@ def greedy_tsp(dist_m: np.ndarray, node_ini=0) -> List:
 
 
 def len_circuit(circuit: List, dist_m: np.ndarray) -> int:
+    """Dado un circuito devuelve su distancia
+    """
     dist = 0
     city_before = circuit[0]
     for city in circuit:
@@ -180,6 +258,7 @@ def len_circuit(circuit: List, dist_m: np.ndarray) -> int:
 
 
 def repeated_greedy_tsp(dist_m: np.ndarray) -> List:
+    """Placeholder"""
     best_circuit = greedy_tsp(dist_m, 0)
 
     for city in range(1, len(dist_m[0]) - 1):
@@ -192,6 +271,7 @@ def repeated_greedy_tsp(dist_m: np.ndarray) -> List:
 
 
 def exhaustive_tsp(dist_m: np.ndarray) -> List:
+    """Placeholder"""
     best_circuit = [item for item in range(0, dist_m.shape[0])]
     for circuit in permutations(range(0, dist_m.shape[0])):
         if min(
