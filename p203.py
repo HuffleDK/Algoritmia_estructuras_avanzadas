@@ -20,7 +20,8 @@ def init_cd(n: int) -> np.ndarray:
 
 
 def union(rep_1: int, rep_2: int, p_cd: np.ndarray) -> int:
-    """En el conjunto disjunto p_cd, une los nodos rep_1 y rep_2, creando el arbol con menor altura posible
+    """En el conjunto disjunto p_cd, une los nodos rep_1 y rep_2, 
+    creando el arbol con menor altura posible
 
     Args:
         rep_1 (int): raiz del primer arbol
@@ -75,7 +76,7 @@ def create_pq(n: int, l_g: List) -> PriorityQueue:
     """
     pq = PriorityQueue()
 
-    for u, v, w in l_g:        
+    for u, v, w in l_g:
         pq.put((w, (u, v)))
 
     return pq
@@ -129,7 +130,8 @@ def complete_graph(n_nodes: int, max_weight: int=50) -> Tuple[int, List]:
 
 
 def time_kruskal(n_graphs: int, n_nodes_ini: int, n_nodes_fin: int, step: int) -> List:
-    """Calcula el tiempo de ejecucción de la función kruskal. Genera varios grafos, aumentado el tamaño.
+    """Calcula el tiempo de ejecucción de la función kruskal. 
+    Genera varios grafos, aumentado el tamaño.
 
     Args:
         n_graphs (int): Numero de grafos generados en cada timing.
@@ -196,7 +198,8 @@ def kruskal_2(n: int, l_g: list) -> Tuple[int, List, float]:
 def time_kruskal_2(
     n_graphs: int, n_nodes_ini: int, n_nodes_fin: int, step: int
 ) -> List:
-    """Calcula el tiempo de ejecucción de la función kruskal pero solo los tiempos de gestion de conjunto disjunto. 
+    """Calcula el tiempo de ejecucción de la función kruskal 
+    pero solo los tiempos de gestion de conjunto disjunto. 
     Genera varios grafos, aumentado el tamaño.
 
     Args:
