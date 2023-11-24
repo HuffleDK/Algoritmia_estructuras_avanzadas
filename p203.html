@@ -1,0 +1,1015 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>p203 API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>p203</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import random
+from typing import List, Tuple
+from time import time
+from itertools import permutations
+from queue import PriorityQueue
+
+import numpy as np
+
+
+def init_cd(n: int) -&gt; np.ndarray:
+    &#34;&#34;&#34;Inicializa un conjunto disjunto en forma de array de numpy inicializado a -1
+
+    Args:
+        n (int): tamaño del conjunto disjunto
+
+    Returns:
+        np.ndarray: Conjunto Disjunto
+    &#34;&#34;&#34;
+    return np.full(n, -1, dtype=int)
+
+
+def union(rep_1: int, rep_2: int, p_cd: np.ndarray) -&gt; int:
+    &#34;&#34;&#34;En el conjunto disjunto p_cd, une los nodos rep_1 y rep_2, 
+    creando el arbol con menor altura posible
+
+    Args:
+        rep_1 (int): raiz del primer arbol
+        rep_2 (int): raiz del segundo arbol
+        p_cd (np.ndarray): Conjunto disjunto
+    
+    Returns:
+        int: raiz del arbol union resultado
+    &#34;&#34;&#34;
+    if p_cd[rep_1] &lt; p_cd[rep_2]:
+        p_cd[rep_2] = rep_1
+        return rep_1
+    if p_cd[rep_1] &gt; p_cd[rep_2]:
+        p_cd[rep_1] = rep_2
+        return rep_2
+    p_cd[rep_2] = rep_1
+    p_cd[rep_1] -= 1
+    return rep_2
+
+
+def find(ind: int, p_cd: np.ndarray) -&gt; int:
+    &#34;&#34;&#34;Encuentra la raiz del nodo ind en p_cd y aplica compresión de caminos
+
+    Args:
+        ind (int): indice que encontrar
+        p_cd (np.ndarray): Conjunto disjunto
+
+    Returns:
+        int: raiz del nodo ind
+    &#34;&#34;&#34;
+    root = ind
+
+    while p_cd[root] &gt;= 0:
+        root = p_cd[root]
+
+    while p_cd[ind] &gt;= 0:
+        a = p_cd[ind]
+        p_cd[ind] = root
+        ind = a
+    return root
+
+
+def create_pq(n: int, l_g: List) -&gt; PriorityQueue:
+    &#34;&#34;&#34;Crea una cola de prioridad dado una lista de aristas. 
+    Las aristas deben estar formateadas de forma (nodo1, nodo2, distancia entre ambos)
+
+    Args:
+        n (int): Numero de nodos en el grafo
+        l_g (List): Lista con aristas.
+    Returns:
+        PriorityQueue: Cola de prioridad
+    &#34;&#34;&#34;
+    pq = PriorityQueue()
+
+    for u, v, w in l_g:
+        pq.put((w, (u, v)))
+
+    return pq
+
+
+def kruskal(n: int, l_g: List) -&gt; Tuple[int, List]:
+    &#34;&#34;&#34;Dado un grafo en forma de lista de aristas, encuentra el arbol recubridor minimo
+
+    Args:
+        n (int): Numero de vertices en el grafo 
+        l_g (int): Lista de aristas que compone el grafo
+    Returns:
+        Tuple[int, List]: Numero de nodos del grafo, lista de aristas final.
+    &#34;&#34;&#34;
+    pq = create_pq(n, l_g)
+    ds = init_cd(n)
+    l_t = []
+
+    while not pq.empty():
+        _, (u, v) = pq.get()
+
+        x = find(u, ds)
+        y = find(v, ds)
+
+        if x != y:
+            l_t.append((u, v))
+            union(x, y, ds)
+
+    return (n, l_t)
+
+
+def complete_graph(n_nodes: int, max_weight: int=50) -&gt; Tuple[int, List]:
+    &#34;&#34;&#34;Genera un grafo completo con n_nodes nodos.
+
+    Args:
+        n_nodes (int): Numero de nodos del grafo a generar.
+        max_weight (optional, int): Máximo peso de las aristas. Por defecto 50.
+    Returns:
+        (int, List): Numero de nodos del grafo, lista con las aristas. 
+    &#34;&#34;&#34;
+    n = n_nodes
+    l_g = []
+
+    while n_nodes &gt;= 1:
+        for i in range(n_nodes - 1):
+            l_g.append((i, n_nodes - 1, random.randint(1, max_weight)))
+
+        n_nodes -= 1
+
+    return (n, l_g)
+
+
+def time_kruskal(n_graphs: int, n_nodes_ini: int, n_nodes_fin: int, step: int) -&gt; List:
+    &#34;&#34;&#34;Calcula el tiempo de ejecucción de la función kruskal. 
+    Genera varios grafos, aumentado el tamaño.
+
+    Args:
+        n_graphs (int): Numero de grafos generados en cada timing.
+        n_nodes_ini (int): Tamaño del grafo inicial.
+        n_nodes_fin (int): Máximo tamaño del grafo.
+        step (int): Cantidad de nodos a añadir con cada timing.
+    Returns:
+        List: Lista de tiempos de ejecución con el tamaño de cada grafo
+    &#34;&#34;&#34;
+    times = []
+
+    for n in range(n_nodes_ini, n_nodes_fin + 1, step):
+        l_graphs = []
+        l_graphs = [complete_graph(n, 50) for i in range(0, n_graphs)]
+        media = 0
+        for graph in l_graphs:
+            time1 = time()
+            kruskal(graph[0], graph[1])
+            time2 = time()
+            media = media + time2 - time1
+        media = media / n_graphs
+        times.append((n, media))
+
+    return times
+
+
+def kruskal_2(n: int, l_g: list) -&gt; Tuple[int, List, float]:
+    &#34;&#34;&#34;Funcion auxiliar. Ademas de ejecutar kruskal, devuelve el tiempo de gestion del conjunto disjunto 
+
+    Args:
+        n (int): Numero de vertices en el grafo 
+        l_g (int): Lista de aristas que compone el grafo
+    Returns:
+        Tuple[int, List, float]: Numero de nodos del grafo, lista de aristas final.
+    &#34;&#34;&#34;
+
+    pq = create_pq(n, l_g)
+    time1 = time()
+    ds = init_cd(n)
+    time1_fin = time()
+    l_t = []
+
+    time_k = time1_fin - time1
+    while not pq.empty():
+        _, (u, v) = pq.get()
+
+        time2 = time()
+        x = find(u, ds)
+        y = find(v, ds)
+        time2_fin = time()
+
+        time3, time3_fin = 0, 0
+        if x != y:
+            l_t.append((u, v))
+            time3 = time()
+            union(x, y, ds)
+            time3_fin = time()
+
+        time_k += time2_fin - time2 + time3_fin - time3
+
+    return (n, l_t, time_k)
+
+
+def time_kruskal_2(
+    n_graphs: int, n_nodes_ini: int, n_nodes_fin: int, step: int
+) -&gt; List:
+    &#34;&#34;&#34;Calcula el tiempo de ejecucción de la función kruskal 
+    pero solo los tiempos de gestion de conjunto disjunto. 
+    Genera varios grafos, aumentado el tamaño.
+
+    Args:
+        n_graphs (int): Numero de grafos generados en cada timing.
+        n_nodes_ini (int): Tamaño del grafo inicial.
+        n_nodes_fin (int): Máximo tamaño del grafo.
+        step (int): Cantidad de nodos a añadir con cada timing.
+    Returns:
+        List: Lista de tiempos de ejecución con el tamaño de cada grafo
+    &#34;&#34;&#34;
+    times = []
+
+    for n in range(n_nodes_ini, n_nodes_fin + 1, step):
+        l_graphs = []
+        l_graphs = [complete_graph(n, 50) for i in range(0, n_graphs)]
+        media = 0
+        for graph in l_graphs:
+            _, _, k_time = kruskal_2(graph[0], graph[1])
+            media = media + k_time
+        media = media / n_graphs
+        times.append((n, media))
+
+    return times
+
+
+def dist_matrix(n_nodes: int, w_max=10) -&gt; np.ndarray:
+    &#34;&#34;&#34;Crea una matriz de distancias para un grafo de n nodos
+
+    Args:
+        n_nodes (int): Número de nodos del grafo 
+        w_max (int, optional): Máximo peso de las aristas del grafo. Defaults to 10.
+
+    Returns:
+        np.ndarray: Array de dos dimensiones con la matriz
+    &#34;&#34;&#34;
+    m = np.random.randint(1, w_max + 1, (n_nodes, n_nodes))
+    m = (m + m.T) // 2
+    np.fill_diagonal(m, 0)
+    return m
+
+
+def greedy_tsp(dist_m: np.ndarray, node_ini=0) -&gt; List:
+    &#34;&#34;&#34;Algoritmo que resuelve el TSP de manera greedy
+
+    Args:
+        dist_m (np.ndarray): Matriz de distancias
+        node_ini (int, optional): Indice del nodo inicial. Defaults to 0.
+
+    Returns:
+        List: Circuito resultado
+    &#34;&#34;&#34;
+    num_cities = dist_m.shape[0]
+    circuit = [node_ini]
+    while len(circuit) &lt; num_cities:
+        current_city = circuit[-1]
+        # sort cities in ascending distance from current
+        options = np.argsort(dist_m[current_city])
+        # add first city in sorted list not visited yet
+        for city in options:
+            if city not in circuit:
+                circuit.append(city)
+                break
+    return np.array(circuit)
+
+
+def len_circuit(circuit: List, dist_m: np.ndarray) -&gt; int:
+    &#34;&#34;&#34;Devuelve la distancia total de un circuito
+
+    Args:
+        circuit (List): Circuito
+        dist_m (np.ndarray): Matriz de distancias
+
+    Returns:
+            int: Longitud del circuito
+    &#34;&#34;&#34;
+    dist = 0
+    city_before = circuit[0]
+    for city in circuit:
+        dist += dist_m[city][city_before]
+        city_before = city
+    return dist
+
+
+def repeated_greedy_tsp(dist_m: np.ndarray) -&gt; List:
+    &#34;&#34;&#34;Algoritmo que resuelve el TSP de manera greedy tantas veces como nodos tenga
+    y devuelve el circuito mas corto
+
+    Args:
+        dist_m (np.ndarray): Matriz de distancias
+
+    Returns:
+        List: Circuito resultado
+    &#34;&#34;&#34;
+    best_circuit = greedy_tsp(dist_m, 0)
+
+    for city in range(1, len(dist_m[0]) - 1):
+        circuit = greedy_tsp(dist_m, city)
+        if min(
+            len_circuit(circuit, dist_m), len_circuit(best_circuit, dist_m)
+        ) == len_circuit(circuit, dist_m):
+            best_circuit = circuit
+    return best_circuit
+
+
+def exhaustive_tsp(dist_m: np.ndarray) -&gt; List:
+    &#34;&#34;&#34;Algoritmo que resuelve el TSP de manera exhaustiva, mirando todos los
+    circuitos posibles y devolviendo el mejor.
+
+    Args:
+        dist_m (np.ndarray): Matriz de distancias
+
+    Returns:
+        List: Circuito resultado
+    &#34;&#34;&#34;
+    best_circuit = [item for item in range(0, dist_m.shape[0])]
+    for circuit in permutations(range(0, dist_m.shape[0])):
+        if min(
+            len_circuit(circuit, dist_m), len_circuit(best_circuit, dist_m)
+        ) == len_circuit(circuit, dist_m):
+            best_circuit = circuit
+    return best_circuit</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="p203.complete_graph"><code class="name flex">
+<span>def <span class="ident">complete_graph</span></span>(<span>n_nodes: int, max_weight: int = 50) ‑> Tuple[int, List]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Genera un grafo completo con n_nodes nodos.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>n_nodes</code></strong> :&ensp;<code>int</code></dt>
+<dd>Numero de nodos del grafo a generar.</dd>
+<dt><strong><code>max_weight</code></strong> :&ensp;<code>optional, int</code></dt>
+<dd>Máximo peso de las aristas. Por defecto 50.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>(int, List): Numero de nodos del grafo, lista con las aristas.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def complete_graph(n_nodes: int, max_weight: int=50) -&gt; Tuple[int, List]:
+    &#34;&#34;&#34;Genera un grafo completo con n_nodes nodos.
+
+    Args:
+        n_nodes (int): Numero de nodos del grafo a generar.
+        max_weight (optional, int): Máximo peso de las aristas. Por defecto 50.
+    Returns:
+        (int, List): Numero de nodos del grafo, lista con las aristas. 
+    &#34;&#34;&#34;
+    n = n_nodes
+    l_g = []
+
+    while n_nodes &gt;= 1:
+        for i in range(n_nodes - 1):
+            l_g.append((i, n_nodes - 1, random.randint(1, max_weight)))
+
+        n_nodes -= 1
+
+    return (n, l_g)</code></pre>
+</details>
+</dd>
+<dt id="p203.create_pq"><code class="name flex">
+<span>def <span class="ident">create_pq</span></span>(<span>n: int, l_g: List) ‑> queue.PriorityQueue</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Crea una cola de prioridad dado una lista de aristas.
+Las aristas deben estar formateadas de forma (nodo1, nodo2, distancia entre ambos)</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>n</code></strong> :&ensp;<code>int</code></dt>
+<dd>Numero de nodos en el grafo</dd>
+<dt><strong><code>l_g</code></strong> :&ensp;<code>List</code></dt>
+<dd>Lista con aristas.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>PriorityQueue</code></dt>
+<dd>Cola de prioridad</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_pq(n: int, l_g: List) -&gt; PriorityQueue:
+    &#34;&#34;&#34;Crea una cola de prioridad dado una lista de aristas. 
+    Las aristas deben estar formateadas de forma (nodo1, nodo2, distancia entre ambos)
+
+    Args:
+        n (int): Numero de nodos en el grafo
+        l_g (List): Lista con aristas.
+    Returns:
+        PriorityQueue: Cola de prioridad
+    &#34;&#34;&#34;
+    pq = PriorityQueue()
+
+    for u, v, w in l_g:
+        pq.put((w, (u, v)))
+
+    return pq</code></pre>
+</details>
+</dd>
+<dt id="p203.dist_matrix"><code class="name flex">
+<span>def <span class="ident">dist_matrix</span></span>(<span>n_nodes: int, w_max=10) ‑> numpy.ndarray</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Crea una matriz de distancias para un grafo de n nodos</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>n_nodes</code></strong> :&ensp;<code>int</code></dt>
+<dd>Número de nodos del grafo </dd>
+<dt><strong><code>w_max</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Máximo peso de las aristas del grafo. Defaults to 10.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>np.ndarray</code></dt>
+<dd>Array de dos dimensiones con la matriz</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def dist_matrix(n_nodes: int, w_max=10) -&gt; np.ndarray:
+    &#34;&#34;&#34;Crea una matriz de distancias para un grafo de n nodos
+
+    Args:
+        n_nodes (int): Número de nodos del grafo 
+        w_max (int, optional): Máximo peso de las aristas del grafo. Defaults to 10.
+
+    Returns:
+        np.ndarray: Array de dos dimensiones con la matriz
+    &#34;&#34;&#34;
+    m = np.random.randint(1, w_max + 1, (n_nodes, n_nodes))
+    m = (m + m.T) // 2
+    np.fill_diagonal(m, 0)
+    return m</code></pre>
+</details>
+</dd>
+<dt id="p203.exhaustive_tsp"><code class="name flex">
+<span>def <span class="ident">exhaustive_tsp</span></span>(<span>dist_m: numpy.ndarray) ‑> List</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Algoritmo que resuelve el TSP de manera exhaustiva, mirando todos los
+circuitos posibles y devolviendo el mejor.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>dist_m</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>Matriz de distancias</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>List</code></dt>
+<dd>Circuito resultado</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def exhaustive_tsp(dist_m: np.ndarray) -&gt; List:
+    &#34;&#34;&#34;Algoritmo que resuelve el TSP de manera exhaustiva, mirando todos los
+    circuitos posibles y devolviendo el mejor.
+
+    Args:
+        dist_m (np.ndarray): Matriz de distancias
+
+    Returns:
+        List: Circuito resultado
+    &#34;&#34;&#34;
+    best_circuit = [item for item in range(0, dist_m.shape[0])]
+    for circuit in permutations(range(0, dist_m.shape[0])):
+        if min(
+            len_circuit(circuit, dist_m), len_circuit(best_circuit, dist_m)
+        ) == len_circuit(circuit, dist_m):
+            best_circuit = circuit
+    return best_circuit</code></pre>
+</details>
+</dd>
+<dt id="p203.find"><code class="name flex">
+<span>def <span class="ident">find</span></span>(<span>ind: int, p_cd: numpy.ndarray) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Encuentra la raiz del nodo ind en p_cd y aplica compresión de caminos</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>ind</code></strong> :&ensp;<code>int</code></dt>
+<dd>indice que encontrar</dd>
+<dt><strong><code>p_cd</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>Conjunto disjunto</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int</code></dt>
+<dd>raiz del nodo ind</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find(ind: int, p_cd: np.ndarray) -&gt; int:
+    &#34;&#34;&#34;Encuentra la raiz del nodo ind en p_cd y aplica compresión de caminos
+
+    Args:
+        ind (int): indice que encontrar
+        p_cd (np.ndarray): Conjunto disjunto
+
+    Returns:
+        int: raiz del nodo ind
+    &#34;&#34;&#34;
+    root = ind
+
+    while p_cd[root] &gt;= 0:
+        root = p_cd[root]
+
+    while p_cd[ind] &gt;= 0:
+        a = p_cd[ind]
+        p_cd[ind] = root
+        ind = a
+    return root</code></pre>
+</details>
+</dd>
+<dt id="p203.greedy_tsp"><code class="name flex">
+<span>def <span class="ident">greedy_tsp</span></span>(<span>dist_m: numpy.ndarray, node_ini=0) ‑> List</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Algoritmo que resuelve el TSP de manera greedy</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>dist_m</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>Matriz de distancias</dd>
+<dt><strong><code>node_ini</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Indice del nodo inicial. Defaults to 0.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>List</code></dt>
+<dd>Circuito resultado</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def greedy_tsp(dist_m: np.ndarray, node_ini=0) -&gt; List:
+    &#34;&#34;&#34;Algoritmo que resuelve el TSP de manera greedy
+
+    Args:
+        dist_m (np.ndarray): Matriz de distancias
+        node_ini (int, optional): Indice del nodo inicial. Defaults to 0.
+
+    Returns:
+        List: Circuito resultado
+    &#34;&#34;&#34;
+    num_cities = dist_m.shape[0]
+    circuit = [node_ini]
+    while len(circuit) &lt; num_cities:
+        current_city = circuit[-1]
+        # sort cities in ascending distance from current
+        options = np.argsort(dist_m[current_city])
+        # add first city in sorted list not visited yet
+        for city in options:
+            if city not in circuit:
+                circuit.append(city)
+                break
+    return np.array(circuit)</code></pre>
+</details>
+</dd>
+<dt id="p203.init_cd"><code class="name flex">
+<span>def <span class="ident">init_cd</span></span>(<span>n: int) ‑> numpy.ndarray</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Inicializa un conjunto disjunto en forma de array de numpy inicializado a -1</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>n</code></strong> :&ensp;<code>int</code></dt>
+<dd>tamaño del conjunto disjunto</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>np.ndarray</code></dt>
+<dd>Conjunto Disjunto</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def init_cd(n: int) -&gt; np.ndarray:
+    &#34;&#34;&#34;Inicializa un conjunto disjunto en forma de array de numpy inicializado a -1
+
+    Args:
+        n (int): tamaño del conjunto disjunto
+
+    Returns:
+        np.ndarray: Conjunto Disjunto
+    &#34;&#34;&#34;
+    return np.full(n, -1, dtype=int)</code></pre>
+</details>
+</dd>
+<dt id="p203.kruskal"><code class="name flex">
+<span>def <span class="ident">kruskal</span></span>(<span>n: int, l_g: List) ‑> Tuple[int, List]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Dado un grafo en forma de lista de aristas, encuentra el arbol recubridor minimo</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>n</code></strong> :&ensp;<code>int</code></dt>
+<dd>Numero de vertices en el grafo </dd>
+<dt><strong><code>l_g</code></strong> :&ensp;<code>int</code></dt>
+<dd>Lista de aristas que compone el grafo</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Tuple[int, List]</code></dt>
+<dd>Numero de nodos del grafo, lista de aristas final.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def kruskal(n: int, l_g: List) -&gt; Tuple[int, List]:
+    &#34;&#34;&#34;Dado un grafo en forma de lista de aristas, encuentra el arbol recubridor minimo
+
+    Args:
+        n (int): Numero de vertices en el grafo 
+        l_g (int): Lista de aristas que compone el grafo
+    Returns:
+        Tuple[int, List]: Numero de nodos del grafo, lista de aristas final.
+    &#34;&#34;&#34;
+    pq = create_pq(n, l_g)
+    ds = init_cd(n)
+    l_t = []
+
+    while not pq.empty():
+        _, (u, v) = pq.get()
+
+        x = find(u, ds)
+        y = find(v, ds)
+
+        if x != y:
+            l_t.append((u, v))
+            union(x, y, ds)
+
+    return (n, l_t)</code></pre>
+</details>
+</dd>
+<dt id="p203.kruskal_2"><code class="name flex">
+<span>def <span class="ident">kruskal_2</span></span>(<span>n: int, l_g: list) ‑> Tuple[int, List, float]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Funcion auxiliar. Ademas de ejecutar kruskal, devuelve el tiempo de gestion del conjunto disjunto </p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>n</code></strong> :&ensp;<code>int</code></dt>
+<dd>Numero de vertices en el grafo </dd>
+<dt><strong><code>l_g</code></strong> :&ensp;<code>int</code></dt>
+<dd>Lista de aristas que compone el grafo</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Tuple[int, List, float]</code></dt>
+<dd>Numero de nodos del grafo, lista de aristas final.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def kruskal_2(n: int, l_g: list) -&gt; Tuple[int, List, float]:
+    &#34;&#34;&#34;Funcion auxiliar. Ademas de ejecutar kruskal, devuelve el tiempo de gestion del conjunto disjunto 
+
+    Args:
+        n (int): Numero de vertices en el grafo 
+        l_g (int): Lista de aristas que compone el grafo
+    Returns:
+        Tuple[int, List, float]: Numero de nodos del grafo, lista de aristas final.
+    &#34;&#34;&#34;
+
+    pq = create_pq(n, l_g)
+    time1 = time()
+    ds = init_cd(n)
+    time1_fin = time()
+    l_t = []
+
+    time_k = time1_fin - time1
+    while not pq.empty():
+        _, (u, v) = pq.get()
+
+        time2 = time()
+        x = find(u, ds)
+        y = find(v, ds)
+        time2_fin = time()
+
+        time3, time3_fin = 0, 0
+        if x != y:
+            l_t.append((u, v))
+            time3 = time()
+            union(x, y, ds)
+            time3_fin = time()
+
+        time_k += time2_fin - time2 + time3_fin - time3
+
+    return (n, l_t, time_k)</code></pre>
+</details>
+</dd>
+<dt id="p203.len_circuit"><code class="name flex">
+<span>def <span class="ident">len_circuit</span></span>(<span>circuit: List, dist_m: numpy.ndarray) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Devuelve la distancia total de un circuito</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>circuit</code></strong> :&ensp;<code>List</code></dt>
+<dd>Circuito</dd>
+<dt><strong><code>dist_m</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>Matriz de distancias</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int</code></dt>
+<dd>Longitud del circuito</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def len_circuit(circuit: List, dist_m: np.ndarray) -&gt; int:
+    &#34;&#34;&#34;Devuelve la distancia total de un circuito
+
+    Args:
+        circuit (List): Circuito
+        dist_m (np.ndarray): Matriz de distancias
+
+    Returns:
+            int: Longitud del circuito
+    &#34;&#34;&#34;
+    dist = 0
+    city_before = circuit[0]
+    for city in circuit:
+        dist += dist_m[city][city_before]
+        city_before = city
+    return dist</code></pre>
+</details>
+</dd>
+<dt id="p203.repeated_greedy_tsp"><code class="name flex">
+<span>def <span class="ident">repeated_greedy_tsp</span></span>(<span>dist_m: numpy.ndarray) ‑> List</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Algoritmo que resuelve el TSP de manera greedy tantas veces como nodos tenga
+y devuelve el circuito mas corto</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>dist_m</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>Matriz de distancias</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>List</code></dt>
+<dd>Circuito resultado</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def repeated_greedy_tsp(dist_m: np.ndarray) -&gt; List:
+    &#34;&#34;&#34;Algoritmo que resuelve el TSP de manera greedy tantas veces como nodos tenga
+    y devuelve el circuito mas corto
+
+    Args:
+        dist_m (np.ndarray): Matriz de distancias
+
+    Returns:
+        List: Circuito resultado
+    &#34;&#34;&#34;
+    best_circuit = greedy_tsp(dist_m, 0)
+
+    for city in range(1, len(dist_m[0]) - 1):
+        circuit = greedy_tsp(dist_m, city)
+        if min(
+            len_circuit(circuit, dist_m), len_circuit(best_circuit, dist_m)
+        ) == len_circuit(circuit, dist_m):
+            best_circuit = circuit
+    return best_circuit</code></pre>
+</details>
+</dd>
+<dt id="p203.time_kruskal"><code class="name flex">
+<span>def <span class="ident">time_kruskal</span></span>(<span>n_graphs: int, n_nodes_ini: int, n_nodes_fin: int, step: int) ‑> List</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calcula el tiempo de ejecucción de la función kruskal.
+Genera varios grafos, aumentado el tamaño.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>n_graphs</code></strong> :&ensp;<code>int</code></dt>
+<dd>Numero de grafos generados en cada timing.</dd>
+<dt><strong><code>n_nodes_ini</code></strong> :&ensp;<code>int</code></dt>
+<dd>Tamaño del grafo inicial.</dd>
+<dt><strong><code>n_nodes_fin</code></strong> :&ensp;<code>int</code></dt>
+<dd>Máximo tamaño del grafo.</dd>
+<dt><strong><code>step</code></strong> :&ensp;<code>int</code></dt>
+<dd>Cantidad de nodos a añadir con cada timing.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>List</code></dt>
+<dd>Lista de tiempos de ejecución con el tamaño de cada grafo</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def time_kruskal(n_graphs: int, n_nodes_ini: int, n_nodes_fin: int, step: int) -&gt; List:
+    &#34;&#34;&#34;Calcula el tiempo de ejecucción de la función kruskal. 
+    Genera varios grafos, aumentado el tamaño.
+
+    Args:
+        n_graphs (int): Numero de grafos generados en cada timing.
+        n_nodes_ini (int): Tamaño del grafo inicial.
+        n_nodes_fin (int): Máximo tamaño del grafo.
+        step (int): Cantidad de nodos a añadir con cada timing.
+    Returns:
+        List: Lista de tiempos de ejecución con el tamaño de cada grafo
+    &#34;&#34;&#34;
+    times = []
+
+    for n in range(n_nodes_ini, n_nodes_fin + 1, step):
+        l_graphs = []
+        l_graphs = [complete_graph(n, 50) for i in range(0, n_graphs)]
+        media = 0
+        for graph in l_graphs:
+            time1 = time()
+            kruskal(graph[0], graph[1])
+            time2 = time()
+            media = media + time2 - time1
+        media = media / n_graphs
+        times.append((n, media))
+
+    return times</code></pre>
+</details>
+</dd>
+<dt id="p203.time_kruskal_2"><code class="name flex">
+<span>def <span class="ident">time_kruskal_2</span></span>(<span>n_graphs: int, n_nodes_ini: int, n_nodes_fin: int, step: int) ‑> List</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calcula el tiempo de ejecucción de la función kruskal
+pero solo los tiempos de gestion de conjunto disjunto.
+Genera varios grafos, aumentado el tamaño.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>n_graphs</code></strong> :&ensp;<code>int</code></dt>
+<dd>Numero de grafos generados en cada timing.</dd>
+<dt><strong><code>n_nodes_ini</code></strong> :&ensp;<code>int</code></dt>
+<dd>Tamaño del grafo inicial.</dd>
+<dt><strong><code>n_nodes_fin</code></strong> :&ensp;<code>int</code></dt>
+<dd>Máximo tamaño del grafo.</dd>
+<dt><strong><code>step</code></strong> :&ensp;<code>int</code></dt>
+<dd>Cantidad de nodos a añadir con cada timing.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>List</code></dt>
+<dd>Lista de tiempos de ejecución con el tamaño de cada grafo</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def time_kruskal_2(
+    n_graphs: int, n_nodes_ini: int, n_nodes_fin: int, step: int
+) -&gt; List:
+    &#34;&#34;&#34;Calcula el tiempo de ejecucción de la función kruskal 
+    pero solo los tiempos de gestion de conjunto disjunto. 
+    Genera varios grafos, aumentado el tamaño.
+
+    Args:
+        n_graphs (int): Numero de grafos generados en cada timing.
+        n_nodes_ini (int): Tamaño del grafo inicial.
+        n_nodes_fin (int): Máximo tamaño del grafo.
+        step (int): Cantidad de nodos a añadir con cada timing.
+    Returns:
+        List: Lista de tiempos de ejecución con el tamaño de cada grafo
+    &#34;&#34;&#34;
+    times = []
+
+    for n in range(n_nodes_ini, n_nodes_fin + 1, step):
+        l_graphs = []
+        l_graphs = [complete_graph(n, 50) for i in range(0, n_graphs)]
+        media = 0
+        for graph in l_graphs:
+            _, _, k_time = kruskal_2(graph[0], graph[1])
+            media = media + k_time
+        media = media / n_graphs
+        times.append((n, media))
+
+    return times</code></pre>
+</details>
+</dd>
+<dt id="p203.union"><code class="name flex">
+<span>def <span class="ident">union</span></span>(<span>rep_1: int, rep_2: int, p_cd: numpy.ndarray) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>En el conjunto disjunto p_cd, une los nodos rep_1 y rep_2,
+creando el arbol con menor altura posible</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>rep_1</code></strong> :&ensp;<code>int</code></dt>
+<dd>raiz del primer arbol</dd>
+<dt><strong><code>rep_2</code></strong> :&ensp;<code>int</code></dt>
+<dd>raiz del segundo arbol</dd>
+<dt><strong><code>p_cd</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>Conjunto disjunto</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int</code></dt>
+<dd>raiz del arbol union resultado</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def union(rep_1: int, rep_2: int, p_cd: np.ndarray) -&gt; int:
+    &#34;&#34;&#34;En el conjunto disjunto p_cd, une los nodos rep_1 y rep_2, 
+    creando el arbol con menor altura posible
+
+    Args:
+        rep_1 (int): raiz del primer arbol
+        rep_2 (int): raiz del segundo arbol
+        p_cd (np.ndarray): Conjunto disjunto
+    
+    Returns:
+        int: raiz del arbol union resultado
+    &#34;&#34;&#34;
+    if p_cd[rep_1] &lt; p_cd[rep_2]:
+        p_cd[rep_2] = rep_1
+        return rep_1
+    if p_cd[rep_1] &gt; p_cd[rep_2]:
+        p_cd[rep_1] = rep_2
+        return rep_2
+    p_cd[rep_2] = rep_1
+    p_cd[rep_1] -= 1
+    return rep_2</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="p203.complete_graph" href="#p203.complete_graph">complete_graph</a></code></li>
+<li><code><a title="p203.create_pq" href="#p203.create_pq">create_pq</a></code></li>
+<li><code><a title="p203.dist_matrix" href="#p203.dist_matrix">dist_matrix</a></code></li>
+<li><code><a title="p203.exhaustive_tsp" href="#p203.exhaustive_tsp">exhaustive_tsp</a></code></li>
+<li><code><a title="p203.find" href="#p203.find">find</a></code></li>
+<li><code><a title="p203.greedy_tsp" href="#p203.greedy_tsp">greedy_tsp</a></code></li>
+<li><code><a title="p203.init_cd" href="#p203.init_cd">init_cd</a></code></li>
+<li><code><a title="p203.kruskal" href="#p203.kruskal">kruskal</a></code></li>
+<li><code><a title="p203.kruskal_2" href="#p203.kruskal_2">kruskal_2</a></code></li>
+<li><code><a title="p203.len_circuit" href="#p203.len_circuit">len_circuit</a></code></li>
+<li><code><a title="p203.repeated_greedy_tsp" href="#p203.repeated_greedy_tsp">repeated_greedy_tsp</a></code></li>
+<li><code><a title="p203.time_kruskal" href="#p203.time_kruskal">time_kruskal</a></code></li>
+<li><code><a title="p203.time_kruskal_2" href="#p203.time_kruskal_2">time_kruskal_2</a></code></li>
+<li><code><a title="p203.union" href="#p203.union">union</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

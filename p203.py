@@ -159,7 +159,8 @@ def time_kruskal(n_graphs: int, n_nodes_ini: int, n_nodes_fin: int, step: int) -
 
 
 def kruskal_2(n: int, l_g: list) -> Tuple[int, List, float]:
-    """Funcion auxiliar. Ademas de ejecutar kruskal, devuelve el tiempo de gestion del conjunto disjunto 
+    """Funcion auxiliar. Ademas de ejecutar kruskal, 
+    devuelve el tiempo de gestion del conjunto disjunto 
 
     Args:
         n (int): Numero de vertices en el grafo 
@@ -226,7 +227,15 @@ def time_kruskal_2(
 
 
 def dist_matrix(n_nodes: int, w_max=10) -> np.ndarray:
-    """Placeholder for disvmatrix"""
+    """Crea una matriz de distancias para un grafo de n nodos
+
+    Args:
+        n_nodes (int): Número de nodos del grafo 
+        w_max (int, optional): Máximo peso de las aristas del grafo. Defaults to 10.
+
+    Returns:
+        np.ndarray: Array de dos dimensiones con la matriz
+    """
     m = np.random.randint(1, w_max + 1, (n_nodes, n_nodes))
     m = (m + m.T) // 2
     np.fill_diagonal(m, 0)
@@ -234,7 +243,15 @@ def dist_matrix(n_nodes: int, w_max=10) -> np.ndarray:
 
 
 def greedy_tsp(dist_m: np.ndarray, node_ini=0) -> List:
-    """Placeholder for gtsp"""
+    """Algoritmo que resuelve el TSP de manera greedy
+
+    Args:
+        dist_m (np.ndarray): Matriz de distancias
+        node_ini (int, optional): Indice del nodo inicial. Defaults to 0.
+
+    Returns:
+        List: Circuito resultado
+    """
     num_cities = dist_m.shape[0]
     circuit = [node_ini]
     while len(circuit) < num_cities:
@@ -250,7 +267,14 @@ def greedy_tsp(dist_m: np.ndarray, node_ini=0) -> List:
 
 
 def len_circuit(circuit: List, dist_m: np.ndarray) -> int:
-    """Dado un circuito devuelve su distancia
+    """Devuelve la distancia total de un circuito
+
+    Args:
+        circuit (List): Circuito
+        dist_m (np.ndarray): Matriz de distancias
+
+    Returns:
+            int: Longitud del circuito
     """
     dist = 0
     city_before = circuit[0]
@@ -261,7 +285,15 @@ def len_circuit(circuit: List, dist_m: np.ndarray) -> int:
 
 
 def repeated_greedy_tsp(dist_m: np.ndarray) -> List:
-    """Placeholder"""
+    """Algoritmo que resuelve el TSP de manera greedy tantas veces como nodos tenga
+    y devuelve el circuito mas corto
+
+    Args:
+        dist_m (np.ndarray): Matriz de distancias
+
+    Returns:
+        List: Circuito resultado
+    """
     best_circuit = greedy_tsp(dist_m, 0)
 
     for city in range(1, len(dist_m[0]) - 1):
@@ -274,7 +306,15 @@ def repeated_greedy_tsp(dist_m: np.ndarray) -> List:
 
 
 def exhaustive_tsp(dist_m: np.ndarray) -> List:
-    """Placeholder"""
+    """Algoritmo que resuelve el TSP de manera exhaustiva, mirando todos los
+    circuitos posibles y devolviendo el mejor.
+
+    Args:
+        dist_m (np.ndarray): Matriz de distancias
+
+    Returns:
+        List: Circuito resultado
+    """
     best_circuit = [item for item in range(0, dist_m.shape[0])]
     for circuit in permutations(range(0, dist_m.shape[0])):
         if min(
