@@ -159,7 +159,8 @@ def time_kruskal(n_graphs: int, n_nodes_ini: int, n_nodes_fin: int, step: int) -
 
 
 def kruskal_2(n: int, l_g: list) -> Tuple[int, List, float]:
-    """Funcion auxiliar. Ademas de ejecutar kruskal, devuelve el tiempo de gestion del conjunto disjunto 
+    """Funcion auxiliar. Ademas de ejecutar kruskal, 
+    devuelve el tiempo de gestion del conjunto disjunto 
 
     Args:
         n (int): Numero de vertices en el grafo 
@@ -226,7 +227,14 @@ def time_kruskal_2(
 
 
 def dist_matrix(n_nodes: int, w_max=10) -> np.ndarray:
-    """Placeholder for disvmatrix"""
+    """Genera una matriz de distancias aleatoria.
+    
+    Args:
+        n_nodes (int): Numero de nodos en el grafo.
+        w_max (int, opcional): Máxima distancia entre nodos, por defecto 10.
+    Returns:
+        np.ndarray: Matriz de tamaño n_nodes x n_nodes
+    """
     m = np.random.randint(1, w_max + 1, (n_nodes, n_nodes))
     m = (m + m.T) // 2
     np.fill_diagonal(m, 0)
