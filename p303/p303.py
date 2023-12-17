@@ -1,4 +1,5 @@
-from typing import List, Tuple, Union
+from typing import Dict, List, Tuple, Union
+from collections import OrderedDict
 
 import numpy as np
 
@@ -129,6 +130,39 @@ def qsel5_nr(t: np.ndarray, k: int)-> Union[int, None]:
 def qsort_5(t: np.ndarray)-> np.ndarray:
     ...
 
+def knapsack_fract_greedy(l_weights: List[int], l_values: List[int], bound: int)-> Dict:
+    """Resuleve el problema de la mochila fraccionado
+
+    Args:
+        l_weights (List[int]): Pesos de los elementos
+        l_values (List[int]): Valor de los elementos
+        bound (int): Limite de peso
+
+    Returns:
+        Dict: valor del elemento -> cantidad del elemento
+    """
+
+    rel_vals = [(i, l_values[i]/l_weights[i]) for i in range(len(l_values))]
+
+    rel_vals = sorted(rel_vals,key=lambda x: x[1], reverse=True)
+    elementos_mochila = {elemento: 0 for elemento in l_values}
+
+    ctr = 0
+    while bound > 0 and len(l_values) >= ctr:
+        idx, _ = rel_vals[ctr]
+
+        if l_weights[idx] <= bound:
+            bound -= l_weights[idx]
+            elementos_mochila[l_values[idx]] = 1
+        else:
+            add = bound / l_weights[idx]
+            bound -= add * l_weights[idx]
+            elementos_mochila[l_values[idx]] = add
+        ctr += 1
+    
+    return elementos_mochila
+    
+
 def knapsack_01_pd(l_weights: List[int], l_values: List[int], bound: int)-> int:
     """Resuelve el problema de la mochila 0/1
 
@@ -152,3 +186,57 @@ def knapsack_01_pd(l_weights: List[int], l_values: List[int], bound: int)-> int:
                 dp[i][w] = dp[i - 1][w]
     
     return dp[n][bound]
+
+def change_pd(c: int, l_coins: List[int]) -> np.ndarray:
+    """ Calcula la matriz generada para hallar el numero de monedas dando cambio de una cantidad c
+
+    Args:
+        c (int): Cantidad
+        l_coins (List[int]): Lista de monedas
+
+    Returns:
+        np.ndarray: Matriz PD
+    """
+    
+    arr = np.full((len(l_coins) + 1, c + 1), np.inf)
+    
+    
+    arr[:, 0] = 0
+    
+    
+    for i in range(1, len(l_coins) + 1):
+        for j in range(1, c + 1):
+            
+            if l_coins[i - 1] <= j:
+                
+                arr[i][j] = min(arr[i - 1][j], 1 + arr[i][j - l_coins[i - 1]])
+            else:
+                
+                arr[i][j] = arr[i - 1][j]
+    
+    return arr
+
+def optimal_change_pd(c: int, l_coins: List[int])-> Dict:
+    """Calcula el cambio optimo de cambio de monedas dada una cantidad c
+
+    Args:
+        c (int): Cantidad
+        l_coins (List[int]): Lista de monedas
+
+    Returns:
+        Dict: Valor de la moneda -> cantidad de esa moneda
+    """
+
+    arr = change_pd(c, l_coins)
+    sol = int(arr[-1,-1])
+    monedas = {elemento: 0 for elemento in l_coins}
+
+    for _ in range(0, sol):
+        for i in range(1, len(arr[:,-1])):
+            if arr[-i,-1] < min(arr[:-i,-1]):
+                monedas[l_coins[-i]] += 1
+                c = c-l_coins[-i]
+                arr = change_pd(c, l_coins)
+                break
+    
+    return dict(OrderedDict(sorted(monedas.items())))
