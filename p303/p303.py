@@ -128,7 +128,24 @@ def qsel5_nr(t: np.ndarray, k: int)-> Union[int, None]:
             k = k-m-1
 
 def qsort_5(t: np.ndarray)-> np.ndarray:
-    ...
+    """Ordena la lista dada usando pivot 5 y el metodo quicksort
+
+    Args:
+        t (np.ndarray): Lista desordenada
+
+    Returns:
+        np.ndarray: Lista ordenada
+    """
+    if len(t) <= 1:
+        return t
+    
+    pivot = pivot5(t)
+    t_l, _, t_r = split_pivot(t, pivot)
+    
+    sorted_left = qsort_5(t_l)
+    sorted_right = qsort_5(t_r)
+    
+    return np.concatenate([sorted_left, [pivot], sorted_right])
 
 def knapsack_fract_greedy(l_weights: List[int], l_values: List[int], bound: int)-> Dict:
     """Resuleve el problema de la mochila fraccionado
