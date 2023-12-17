@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>p303 API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>p303</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from typing import Dict, List, Tuple, Union
+from collections import OrderedDict
+
+import numpy as np
+
+
+def split(t: np.ndarray) -&gt; Tuple[np.ndarray, int, np.ndarray]:
+    &#34;&#34;&#34;Reparte los elementos de t en dos listas con menores y mayores que t[0]
+
+    Args:
+        t (np.ndarray): Lista de elementos
+
+    Returns:
+        Tuple[np.ndarray, int, np.ndarray]: Lista de menores, pivot y lista de mayores, en ese orden
+    &#34;&#34;&#34;
+    menores = np.array([elemento for elemento in t if elemento &lt; t[0]])
+    mayores = np.array([elemento for elemento in t if elemento &gt; t[0]])
+    return (menores, t[0], mayores)
+
+
+def qsel(t: np.ndarray, k: int) -&gt; Union[int, None]:
+    &#34;&#34;&#34;Selecciona el elemento en el indice k en un t ordenado
+
+    Args:
+        t (np.ndarray): lista de elementos
+        k (int): indice a buscar
+
+    Returns:
+        Union[int, None]: Indice en la posicion k o None
+    &#34;&#34;&#34;
+    if len(t) == 1 and k == 0:
+        return t[0]
+    if len(t) == 0:
+        return None
+
+    t_l, mid, t_r = split(t)
+    m = len(t_l)
+    if k == m:
+        return mid
+    if k &lt; m:
+        return qsel(t_l, k)
+
+    return qsel(t_r, k - m - 1)
+
+
+def qsel_nr(t: np.ndarray, k: int) -&gt; Union[int, None]:
+    &#34;&#34;&#34;Quick Select sin recursion de cola
+
+    Args:
+        t (np.ndarray): Lista de elementos
+        k (int): Indice a recuperar
+
+    Returns:
+        Union[int, None]: Elemento en la posicion k o None
+    &#34;&#34;&#34;
+    if len(t) == 1 and k == 0:
+        return t[0]
+    if len(t) == 0:
+        return None
+
+    m = len(t)
+    t_aux = t
+
+    while True:
+        t_l, mid, t_r = split(t_aux)
+        m = len(t_l)
+
+        if k == m:
+            return mid
+        if k &lt; m:
+            t_aux = t_l
+        else:
+            t_aux = t_r
+            k = k - m - 1
+
+
+def split_pivot(t: np.ndarray, mid: int) -&gt; Tuple[np.ndarray, int, np.ndarray]:
+    &#34;&#34;&#34;Divide una lista en menores y mayores del pivot dado
+
+    Args:
+        t (np.ndarray): Lista a dividir
+        mid (int): pivot
+
+    Returns:
+        Tuple[np.ndarray, int, np.ndarray]: Lista de menores, pivot y lista de mayores, en ese orden
+    &#34;&#34;&#34;
+    menores = np.array([elemento for elemento in t if elemento &lt; mid])
+    mayores = np.array([elemento for elemento in t if elemento &gt; mid])
+    return (menores, mid, mayores)
+
+
+def pivot5(t: np.ndarray) -&gt; int:
+    &#34;&#34;&#34;Calcula el pivote 5, la mediana de medianas de 5 elementos
+
+    Args:
+        t (np.ndarray): Lista a recuperar el pivot 5
+
+    Returns:
+        int: pivot 5
+    &#34;&#34;&#34;
+    t_aux = [t[x : x + 5] for x in range(0, len(t), 5)]
+    medians = [sorted(x)[len(x) // 2] for x in t_aux]
+    mid = sorted(medians)[len(medians) // 2]
+    return mid
+
+
+def qsel5_nr(t: np.ndarray, k: int) -&gt; Union[int, None]:
+    &#34;&#34;&#34;Quick select utilizando pivot 5 sin recursion de cola
+
+    Args:
+        t (np.ndarray): Lista de elementos
+        k (int): posicion del elemento a recuperar
+
+    Returns:
+        Union[int, None]: Elemento en la posicion k o None
+    &#34;&#34;&#34;
+    mid = pivot5(t)
+    t_aux = t
+    m = len(t)
+
+    while True:
+        mid = pivot5(t_aux)
+        t_l, mid, t_r = split_pivot(t_aux, mid)
+        m = len(t_l)
+
+        if k == m:
+            return mid
+        if k &lt; m:
+            t_aux = t_l
+        else:
+            t_aux = t_r
+            k = k - m - 1
+
+
+def qsort_5(t: np.ndarray) -&gt; np.ndarray:
+    &#34;&#34;&#34;Ordena la lista dada usando pivot 5 y el metodo quicksort
+
+    Args:
+        t (np.ndarray): Lista desordenada
+
+    Returns:
+        np.ndarray: Lista ordenada
+    &#34;&#34;&#34;
+    if len(t) &lt;= 1:
+        return t
+
+    pivot = pivot5(t)
+    t_l, _, t_r = split_pivot(t, pivot)
+
+    sorted_left = qsort_5(t_l)
+    sorted_right = qsort_5(t_r)
+
+    return np.concatenate([sorted_left, [pivot], sorted_right])
+
+
+def knapsack_fract_greedy(
+    l_weights: List[int], l_values: List[int], bound: int
+) -&gt; Dict:
+    &#34;&#34;&#34;Resuleve el problema de la mochila fraccionado
+
+    Args:
+        l_weights (List[int]): Pesos de los elementos
+        l_values (List[int]): Valor de los elementos
+        bound (int): Limite de peso
+
+    Returns:
+        Dict: valor del elemento -&gt; cantidad del elemento
+    &#34;&#34;&#34;
+
+    rel_vals = [(i, l_values[i] / l_weights[i]) for i in range(len(l_values))]
+
+    rel_vals = sorted(rel_vals, key=lambda x: x[1], reverse=True)
+    elementos_mochila = {elemento: 0 for elemento in l_values}
+
+    ctr = 0
+    while bound &gt; 0 and len(l_values) &gt;= ctr:
+        idx, _ = rel_vals[ctr]
+
+        if l_weights[idx] &lt;= bound:
+            bound -= l_weights[idx]
+            elementos_mochila[l_values[idx]] = 1
+        else:
+            add = bound / l_weights[idx]
+            bound -= add * l_weights[idx]
+            elementos_mochila[l_values[idx]] = add
+        ctr += 1
+
+    return elementos_mochila
+
+
+def knapsack_01_pd(l_weights: List[int], l_values: List[int], bound: int) -&gt; int:
+    &#34;&#34;&#34;Resuelve el problema de la mochila 0/1
+
+    Args:
+        l_weights (List[int]): Lista de pesos
+        l_values (List[int]): Lista de valores asociados a los pesos
+        bound (int): Limite de peso
+
+    Returns:
+        int: Valor optimo de la mochila
+    &#34;&#34;&#34;
+    n = len(l_weights)
+
+    dp = [[0] * (bound + 1) for _ in range(n + 1)]
+
+    for i in range(1, n + 1):
+        for w in range(bound + 1):
+            if l_weights[i - 1] &lt;= w:
+                dp[i][w] = max(
+                    dp[i - 1][w], l_values[i - 1] + dp[i - 1][w - l_weights[i - 1]]
+                )
+            else:
+                dp[i][w] = dp[i - 1][w]
+
+    return dp[n][bound]
+
+
+def change_pd(c: int, l_coins: List[int]) -&gt; np.ndarray:
+    &#34;&#34;&#34;Calcula la matriz generada para hallar el numero de monedas dando cambio de una cantidad c
+
+    Args:
+        c (int): Cantidad
+        l_coins (List[int]): Lista de monedas
+
+    Returns:
+        np.ndarray: Matriz PD
+    &#34;&#34;&#34;
+
+    arr = np.full((len(l_coins) + 1, c + 1), np.inf)
+
+    arr[:, 0] = 0
+
+    for i in range(1, len(l_coins) + 1):
+        for j in range(1, c + 1):
+            if l_coins[i - 1] &lt;= j:
+                arr[i][j] = min(arr[i - 1][j], 1 + arr[i][j - l_coins[i - 1]])
+            else:
+                arr[i][j] = arr[i - 1][j]
+
+    return arr
+
+
+def optimal_change_pd(c: int, l_coins: List[int]) -&gt; Dict:
+    &#34;&#34;&#34;Calcula el cambio optimo de cambio de monedas dada una cantidad c
+
+    Args:
+        c (int): Cantidad
+        l_coins (List[int]): Lista de monedas
+
+    Returns:
+        Dict: Valor de la moneda -&gt; cantidad de esa moneda
+    &#34;&#34;&#34;
+
+    arr = change_pd(c, l_coins)
+    sol = int(arr[-1, -1])
+    monedas = {elemento: 0 for elemento in l_coins}
+
+    for _ in range(0, sol):
+        for i in range(1, len(arr[:, -1])):
+            if arr[-i, -1] &lt; min(arr[:-i, -1]):
+                monedas[l_coins[-i]] += 1
+                c = c - l_coins[-i]
+                arr = change_pd(c, l_coins)
+                break
+
+    return dict(OrderedDict(sorted(monedas.items())))</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="p303.change_pd"><code class="name flex">
+<span>def <span class="ident">change_pd</span></span>(<span>c: int, l_coins: List[int]) ‑> numpy.ndarray</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calcula la matriz generada para hallar el numero de monedas dando cambio de una cantidad c</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>c</code></strong> :&ensp;<code>int</code></dt>
+<dd>Cantidad</dd>
+<dt><strong><code>l_coins</code></strong> :&ensp;<code>List[int]</code></dt>
+<dd>Lista de monedas</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>np.ndarray</code></dt>
+<dd>Matriz PD</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def change_pd(c: int, l_coins: List[int]) -&gt; np.ndarray:
+    &#34;&#34;&#34;Calcula la matriz generada para hallar el numero de monedas dando cambio de una cantidad c
+
+    Args:
+        c (int): Cantidad
+        l_coins (List[int]): Lista de monedas
+
+    Returns:
+        np.ndarray: Matriz PD
+    &#34;&#34;&#34;
+
+    arr = np.full((len(l_coins) + 1, c + 1), np.inf)
+
+    arr[:, 0] = 0
+
+    for i in range(1, len(l_coins) + 1):
+        for j in range(1, c + 1):
+            if l_coins[i - 1] &lt;= j:
+                arr[i][j] = min(arr[i - 1][j], 1 + arr[i][j - l_coins[i - 1]])
+            else:
+                arr[i][j] = arr[i - 1][j]
+
+    return arr</code></pre>
+</details>
+</dd>
+<dt id="p303.knapsack_01_pd"><code class="name flex">
+<span>def <span class="ident">knapsack_01_pd</span></span>(<span>l_weights: List[int], l_values: List[int], bound: int) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Resuelve el problema de la mochila 0/1</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>l_weights</code></strong> :&ensp;<code>List[int]</code></dt>
+<dd>Lista de pesos</dd>
+<dt><strong><code>l_values</code></strong> :&ensp;<code>List[int]</code></dt>
+<dd>Lista de valores asociados a los pesos</dd>
+<dt><strong><code>bound</code></strong> :&ensp;<code>int</code></dt>
+<dd>Limite de peso</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int</code></dt>
+<dd>Valor optimo de la mochila</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def knapsack_01_pd(l_weights: List[int], l_values: List[int], bound: int) -&gt; int:
+    &#34;&#34;&#34;Resuelve el problema de la mochila 0/1
+
+    Args:
+        l_weights (List[int]): Lista de pesos
+        l_values (List[int]): Lista de valores asociados a los pesos
+        bound (int): Limite de peso
+
+    Returns:
+        int: Valor optimo de la mochila
+    &#34;&#34;&#34;
+    n = len(l_weights)
+
+    dp = [[0] * (bound + 1) for _ in range(n + 1)]
+
+    for i in range(1, n + 1):
+        for w in range(bound + 1):
+            if l_weights[i - 1] &lt;= w:
+                dp[i][w] = max(
+                    dp[i - 1][w], l_values[i - 1] + dp[i - 1][w - l_weights[i - 1]]
+                )
+            else:
+                dp[i][w] = dp[i - 1][w]
+
+    return dp[n][bound]</code></pre>
+</details>
+</dd>
+<dt id="p303.knapsack_fract_greedy"><code class="name flex">
+<span>def <span class="ident">knapsack_fract_greedy</span></span>(<span>l_weights: List[int], l_values: List[int], bound: int) ‑> Dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Resuleve el problema de la mochila fraccionado</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>l_weights</code></strong> :&ensp;<code>List[int]</code></dt>
+<dd>Pesos de los elementos</dd>
+<dt><strong><code>l_values</code></strong> :&ensp;<code>List[int]</code></dt>
+<dd>Valor de los elementos</dd>
+<dt><strong><code>bound</code></strong> :&ensp;<code>int</code></dt>
+<dd>Limite de peso</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Dict</code></dt>
+<dd>valor del elemento -&gt; cantidad del elemento</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def knapsack_fract_greedy(
+    l_weights: List[int], l_values: List[int], bound: int
+) -&gt; Dict:
+    &#34;&#34;&#34;Resuleve el problema de la mochila fraccionado
+
+    Args:
+        l_weights (List[int]): Pesos de los elementos
+        l_values (List[int]): Valor de los elementos
+        bound (int): Limite de peso
+
+    Returns:
+        Dict: valor del elemento -&gt; cantidad del elemento
+    &#34;&#34;&#34;
+
+    rel_vals = [(i, l_values[i] / l_weights[i]) for i in range(len(l_values))]
+
+    rel_vals = sorted(rel_vals, key=lambda x: x[1], reverse=True)
+    elementos_mochila = {elemento: 0 for elemento in l_values}
+
+    ctr = 0
+    while bound &gt; 0 and len(l_values) &gt;= ctr:
+        idx, _ = rel_vals[ctr]
+
+        if l_weights[idx] &lt;= bound:
+            bound -= l_weights[idx]
+            elementos_mochila[l_values[idx]] = 1
+        else:
+            add = bound / l_weights[idx]
+            bound -= add * l_weights[idx]
+            elementos_mochila[l_values[idx]] = add
+        ctr += 1
+
+    return elementos_mochila</code></pre>
+</details>
+</dd>
+<dt id="p303.optimal_change_pd"><code class="name flex">
+<span>def <span class="ident">optimal_change_pd</span></span>(<span>c: int, l_coins: List[int]) ‑> Dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calcula el cambio optimo de cambio de monedas dada una cantidad c</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>c</code></strong> :&ensp;<code>int</code></dt>
+<dd>Cantidad</dd>
+<dt><strong><code>l_coins</code></strong> :&ensp;<code>List[int]</code></dt>
+<dd>Lista de monedas</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Dict</code></dt>
+<dd>Valor de la moneda -&gt; cantidad de esa moneda</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def optimal_change_pd(c: int, l_coins: List[int]) -&gt; Dict:
+    &#34;&#34;&#34;Calcula el cambio optimo de cambio de monedas dada una cantidad c
+
+    Args:
+        c (int): Cantidad
+        l_coins (List[int]): Lista de monedas
+
+    Returns:
+        Dict: Valor de la moneda -&gt; cantidad de esa moneda
+    &#34;&#34;&#34;
+
+    arr = change_pd(c, l_coins)
+    sol = int(arr[-1, -1])
+    monedas = {elemento: 0 for elemento in l_coins}
+
+    for _ in range(0, sol):
+        for i in range(1, len(arr[:, -1])):
+            if arr[-i, -1] &lt; min(arr[:-i, -1]):
+                monedas[l_coins[-i]] += 1
+                c = c - l_coins[-i]
+                arr = change_pd(c, l_coins)
+                break
+
+    return dict(OrderedDict(sorted(monedas.items())))</code></pre>
+</details>
+</dd>
+<dt id="p303.pivot5"><code class="name flex">
+<span>def <span class="ident">pivot5</span></span>(<span>t: numpy.ndarray) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calcula el pivote 5, la mediana de medianas de 5 elementos</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>t</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>Lista a recuperar el pivot 5</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int</code></dt>
+<dd>pivot 5</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def pivot5(t: np.ndarray) -&gt; int:
+    &#34;&#34;&#34;Calcula el pivote 5, la mediana de medianas de 5 elementos
+
+    Args:
+        t (np.ndarray): Lista a recuperar el pivot 5
+
+    Returns:
+        int: pivot 5
+    &#34;&#34;&#34;
+    t_aux = [t[x : x + 5] for x in range(0, len(t), 5)]
+    medians = [sorted(x)[len(x) // 2] for x in t_aux]
+    mid = sorted(medians)[len(medians) // 2]
+    return mid</code></pre>
+</details>
+</dd>
+<dt id="p303.qsel"><code class="name flex">
+<span>def <span class="ident">qsel</span></span>(<span>t: numpy.ndarray, k: int) ‑> Optional[int]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Selecciona el elemento en el indice k en un t ordenado</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>t</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>lista de elementos</dd>
+<dt><strong><code>k</code></strong> :&ensp;<code>int</code></dt>
+<dd>indice a buscar</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Union[int, None]</code></dt>
+<dd>Indice en la posicion k o None</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def qsel(t: np.ndarray, k: int) -&gt; Union[int, None]:
+    &#34;&#34;&#34;Selecciona el elemento en el indice k en un t ordenado
+
+    Args:
+        t (np.ndarray): lista de elementos
+        k (int): indice a buscar
+
+    Returns:
+        Union[int, None]: Indice en la posicion k o None
+    &#34;&#34;&#34;
+    if len(t) == 1 and k == 0:
+        return t[0]
+    if len(t) == 0:
+        return None
+
+    t_l, mid, t_r = split(t)
+    m = len(t_l)
+    if k == m:
+        return mid
+    if k &lt; m:
+        return qsel(t_l, k)
+
+    return qsel(t_r, k - m - 1)</code></pre>
+</details>
+</dd>
+<dt id="p303.qsel5_nr"><code class="name flex">
+<span>def <span class="ident">qsel5_nr</span></span>(<span>t: numpy.ndarray, k: int) ‑> Optional[int]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Quick select utilizando pivot 5 sin recursion de cola</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>t</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>Lista de elementos</dd>
+<dt><strong><code>k</code></strong> :&ensp;<code>int</code></dt>
+<dd>posicion del elemento a recuperar</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Union[int, None]</code></dt>
+<dd>Elemento en la posicion k o None</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def qsel5_nr(t: np.ndarray, k: int) -&gt; Union[int, None]:
+    &#34;&#34;&#34;Quick select utilizando pivot 5 sin recursion de cola
+
+    Args:
+        t (np.ndarray): Lista de elementos
+        k (int): posicion del elemento a recuperar
+
+    Returns:
+        Union[int, None]: Elemento en la posicion k o None
+    &#34;&#34;&#34;
+    mid = pivot5(t)
+    t_aux = t
+    m = len(t)
+
+    while True:
+        mid = pivot5(t_aux)
+        t_l, mid, t_r = split_pivot(t_aux, mid)
+        m = len(t_l)
+
+        if k == m:
+            return mid
+        if k &lt; m:
+            t_aux = t_l
+        else:
+            t_aux = t_r
+            k = k - m - 1</code></pre>
+</details>
+</dd>
+<dt id="p303.qsel_nr"><code class="name flex">
+<span>def <span class="ident">qsel_nr</span></span>(<span>t: numpy.ndarray, k: int) ‑> Optional[int]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Quick Select sin recursion de cola</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>t</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>Lista de elementos</dd>
+<dt><strong><code>k</code></strong> :&ensp;<code>int</code></dt>
+<dd>Indice a recuperar</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Union[int, None]</code></dt>
+<dd>Elemento en la posicion k o None</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def qsel_nr(t: np.ndarray, k: int) -&gt; Union[int, None]:
+    &#34;&#34;&#34;Quick Select sin recursion de cola
+
+    Args:
+        t (np.ndarray): Lista de elementos
+        k (int): Indice a recuperar
+
+    Returns:
+        Union[int, None]: Elemento en la posicion k o None
+    &#34;&#34;&#34;
+    if len(t) == 1 and k == 0:
+        return t[0]
+    if len(t) == 0:
+        return None
+
+    m = len(t)
+    t_aux = t
+
+    while True:
+        t_l, mid, t_r = split(t_aux)
+        m = len(t_l)
+
+        if k == m:
+            return mid
+        if k &lt; m:
+            t_aux = t_l
+        else:
+            t_aux = t_r
+            k = k - m - 1</code></pre>
+</details>
+</dd>
+<dt id="p303.qsort_5"><code class="name flex">
+<span>def <span class="ident">qsort_5</span></span>(<span>t: numpy.ndarray) ‑> numpy.ndarray</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Ordena la lista dada usando pivot 5 y el metodo quicksort</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>t</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>Lista desordenada</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>np.ndarray</code></dt>
+<dd>Lista ordenada</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def qsort_5(t: np.ndarray) -&gt; np.ndarray:
+    &#34;&#34;&#34;Ordena la lista dada usando pivot 5 y el metodo quicksort
+
+    Args:
+        t (np.ndarray): Lista desordenada
+
+    Returns:
+        np.ndarray: Lista ordenada
+    &#34;&#34;&#34;
+    if len(t) &lt;= 1:
+        return t
+
+    pivot = pivot5(t)
+    t_l, _, t_r = split_pivot(t, pivot)
+
+    sorted_left = qsort_5(t_l)
+    sorted_right = qsort_5(t_r)
+
+    return np.concatenate([sorted_left, [pivot], sorted_right])</code></pre>
+</details>
+</dd>
+<dt id="p303.split"><code class="name flex">
+<span>def <span class="ident">split</span></span>(<span>t: numpy.ndarray) ‑> Tuple[numpy.ndarray, int, numpy.ndarray]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reparte los elementos de t en dos listas con menores y mayores que t[0]</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>t</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>Lista de elementos</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Tuple[np.ndarray, int, np.ndarray]</code></dt>
+<dd>Lista de menores, pivot y lista de mayores, en ese orden</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def split(t: np.ndarray) -&gt; Tuple[np.ndarray, int, np.ndarray]:
+    &#34;&#34;&#34;Reparte los elementos de t en dos listas con menores y mayores que t[0]
+
+    Args:
+        t (np.ndarray): Lista de elementos
+
+    Returns:
+        Tuple[np.ndarray, int, np.ndarray]: Lista de menores, pivot y lista de mayores, en ese orden
+    &#34;&#34;&#34;
+    menores = np.array([elemento for elemento in t if elemento &lt; t[0]])
+    mayores = np.array([elemento for elemento in t if elemento &gt; t[0]])
+    return (menores, t[0], mayores)</code></pre>
+</details>
+</dd>
+<dt id="p303.split_pivot"><code class="name flex">
+<span>def <span class="ident">split_pivot</span></span>(<span>t: numpy.ndarray, mid: int) ‑> Tuple[numpy.ndarray, int, numpy.ndarray]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Divide una lista en menores y mayores del pivot dado</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>t</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>Lista a dividir</dd>
+<dt><strong><code>mid</code></strong> :&ensp;<code>int</code></dt>
+<dd>pivot</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Tuple[np.ndarray, int, np.ndarray]</code></dt>
+<dd>Lista de menores, pivot y lista de mayores, en ese orden</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def split_pivot(t: np.ndarray, mid: int) -&gt; Tuple[np.ndarray, int, np.ndarray]:
+    &#34;&#34;&#34;Divide una lista en menores y mayores del pivot dado
+
+    Args:
+        t (np.ndarray): Lista a dividir
+        mid (int): pivot
+
+    Returns:
+        Tuple[np.ndarray, int, np.ndarray]: Lista de menores, pivot y lista de mayores, en ese orden
+    &#34;&#34;&#34;
+    menores = np.array([elemento for elemento in t if elemento &lt; mid])
+    mayores = np.array([elemento for elemento in t if elemento &gt; mid])
+    return (menores, mid, mayores)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="p303.change_pd" href="#p303.change_pd">change_pd</a></code></li>
+<li><code><a title="p303.knapsack_01_pd" href="#p303.knapsack_01_pd">knapsack_01_pd</a></code></li>
+<li><code><a title="p303.knapsack_fract_greedy" href="#p303.knapsack_fract_greedy">knapsack_fract_greedy</a></code></li>
+<li><code><a title="p303.optimal_change_pd" href="#p303.optimal_change_pd">optimal_change_pd</a></code></li>
+<li><code><a title="p303.pivot5" href="#p303.pivot5">pivot5</a></code></li>
+<li><code><a title="p303.qsel" href="#p303.qsel">qsel</a></code></li>
+<li><code><a title="p303.qsel5_nr" href="#p303.qsel5_nr">qsel5_nr</a></code></li>
+<li><code><a title="p303.qsel_nr" href="#p303.qsel_nr">qsel_nr</a></code></li>
+<li><code><a title="p303.qsort_5" href="#p303.qsort_5">qsort_5</a></code></li>
+<li><code><a title="p303.split" href="#p303.split">split</a></code></li>
+<li><code><a title="p303.split_pivot" href="#p303.split_pivot">split_pivot</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
